@@ -6,7 +6,7 @@
 
 include_recipe 'apt'
 
-%w{maas maas-dhcp maas-dns}.each do |pkg|
+%w(maas maas-dhcp maas-dns).each do |pkg|
   package pkg do
     action [:install]
   end

@@ -13,10 +13,10 @@ describe 'maas::default' do
 
   it 'installs maas-dhcp' do
     expect(chef_run).to install_package('maas-dhcp')
-      end
+  end
 
   it 'installs maas-dns' do
     expect(chef_run).to install_package('maas-dns')
-      end
+  end
 
 end
