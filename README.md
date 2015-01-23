@@ -1,4 +1,5 @@
 # maas
+[![Build Status](https://travis-ci.org/jjasghar/maas.svg?branch=master)](https://travis-ci.org/jjasghar/maas)
 
 This is a cookbook to deploy [maas](https://maas.ubuntu.com) via chef.
 
