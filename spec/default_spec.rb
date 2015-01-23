@@ -18,5 +18,4 @@ describe 'maas::default' do
   it 'installs maas-dns' do
     expect(chef_run).to install_package('maas-dns')
   end
-
 end
