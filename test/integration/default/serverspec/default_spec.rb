@@ -12,7 +12,7 @@ describe service('apache2') do
   it { should be_enabled }
 end
 
-describe service('rabbitmq') do
+describe service('postgres') do
   it { should be_enabled }
 end
 
@@ -20,6 +20,6 @@ describe service('squid3') do
   it { should be_enabled }
 end
 
-describe service('postgres') do
+describe service('maas-proxy') do
   it { should be_enabled }
 end
