@@ -6,12 +6,12 @@
 
 include_recipe 'apt'
 
-apt_repository "MAASTesting" do
-  uri "ppa:maas-maintainers/testing"
+apt_repository 'MAASTesting' do
+  uri 'ppa:maas-maintainers/testing'
   distribution node['lsb']['codename']
-  components ["main"]
-  keyserver "keyserver.ubuntu.com"
-  key "93EE8CC5"
+  components ['main']
+  keyserver 'keyserver.ubuntu.com'
+  key '93EE8CC5'
 end
 
 %w(maas maas-dhcp maas-dns).each do |pkg|
