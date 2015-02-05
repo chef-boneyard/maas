@@ -14,6 +14,15 @@ You'll need to create a `superuser` for the maas instance:
 $ sudo maas-region-admin createadmin --username=root --email=MYEMAIL@EXAMPLE.COM
 ```
 
+## Adding another nic after provisioning
+
+If you and another network interface card after your initial provisioning you will have to do the following:
+```bash
+$ sudo dpkg-reconfigure maas-cluster-controller
+$ sudo dpkg-reconfigure maas-region-controller
+```
+And make sure they are the address on the network you want to have MaaS provision.
+
 ## Testing
 
 There are chefspec tests which you can run via chef-dk.
