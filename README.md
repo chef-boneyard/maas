@@ -3,7 +3,10 @@
 
 This is a cookbook to deploy [maas](https://maas.ubuntu.com) via chef.
 
-It requires the `apt` cookbook.
+## Cookbook dependencies
+
+- [apt cookbook](https://supermarket.chef.io/cookbooks/apt)
+- [bazaar cookbook](https://supermarket.chef.io/cookbooks/bazaar)
 
 Ubuntu 14.04 is the only supported distro and version.
 
@@ -31,7 +34,11 @@ Superuser email
 default['maas']['superuser_email'] = "fakeemail@fake.com"
 ```
 
+## Recipes
 
+`default.rb` installs and does a default configuration of the superuser for mass. You can turn it off by overriding: `default['maas']['create_superuser']` in the `attributes.rb`.
+
+`centos.rb`  pulls down [CentOS 7](http://www.centos.org/) and add it as a custom image to your MaaS instance. The best way to do it would be add it to your `run_list` as something that runs after the `default.rb`.
 
 ## Adding another nic after provisioning
 
