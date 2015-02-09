@@ -9,10 +9,29 @@ Ubuntu 14.04 is the only supported distro and version.
 
 After it has converged successfully, you should follow the steps [installing maas](https://maas.ubuntu.com/docs/install.html).
 
-You'll need to create a `superuser` for the maas instance:
-```bash
-$ sudo maas-region-admin createadmin --username=root --email=MYEMAIL@EXAMPLE.COM
+## Attributes
+
+Create the Superuser
+```ruby
+default['maas']['create_superuser'] = true
 ```
+
+Superuser name
+```ruby
+default['maas']['superuser_name'] = "admin"
+```
+
+Superuser password
+```ruby
+default['maas']['superuser_password'] = "admin"
+```
+
+Superuser email
+```ruby
+default['maas']['superuser_email'] = "fakeemail@fake.com"
+```
+
+
 
 ## Adding another nic after provisioning
 

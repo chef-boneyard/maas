@@ -23,3 +23,7 @@ end
 describe service('maas-proxy') do
   it { should be_enabled }
 end
+
+describe file('/etc/maas/.superuser_created') do
+  it { should be_file }
+end
