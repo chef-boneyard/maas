@@ -20,10 +20,10 @@ end
   end
 end
 
-if "#{node['maas']['create_superuser']}"
-  execute "Setup Superuser" do
+if node['maas']['create_superuser']
+  execute 'Setup Superuser' do
     command "maas-region-admin createadmin --username=#{node['maas']['superuser_name']} --password=#{node['maas']['superuser_password']} --email #{node['maas']['superuser_password']} && touch /etc/maas/.superuser_created"
-    creates "/etc/maas/.superuser_created"
+    creates '/etc/maas/.superuser_created'
     action :run
   end
 end
