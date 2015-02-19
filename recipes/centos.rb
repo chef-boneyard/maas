@@ -20,14 +20,14 @@ execute 'installing dependancies' do
   action :run
 end
 
-execute 'building centos70....this might take a while; coffee is your friend.' do
+execute 'building centos70....this might take a while; coffee is your friend.' do # rubocop:disable LineLength
   command 'sudo ./bin/build centos amd64 --centos-edition 7'
   creates '/etc/libvirt/qemu/img-build-centos7-amd64.xml'
   action :run
 end
 
-execute "install centos70 to MAAS" do
-  command "maas admin boot-resources create name=centos/centos70 architecture=amd64/generic content@=/opt/maas-image-builder/build-output/centos7-amd64-root-tgz && touch /etc/maas/.installed_centos70" # rubocop:disable LineLength
-  creates "/etc/maas/.installed_centos70"
+execute 'install centos70 to MAAS' do
+  command 'maas admin boot-resources create name=centos/centos70 architecture=amd64/generic content@=/opt/maas-image-builder/build-output/centos7-amd64-root-tgz && touch /etc/maas/.installed_centos70' # rubocop:disable LineLength
+  creates '/etc/maas/.installed_centos70'
   action :run
 end

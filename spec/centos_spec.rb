@@ -18,7 +18,11 @@ describe 'maas::centos' do
   end
 
   it 'execute building centos7 image' do
-    expect(chef_run).to run_execute('installing dependancies')
+    expect(chef_run).to run_execute('building centos70....this might take a while; coffee is your friend.') # rubocop:disable LineLength
+  end
+
+  it 'executes install to centos70 to MAAS' do
+    expect(chef_run).to run_execute('install centos70 to MAAS')
   end
 
   it 'should install python packages' do
