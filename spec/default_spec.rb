@@ -24,4 +24,19 @@ describe 'maas::default' do
   it 'installs maas-dns' do
     expect(chef_run).to install_package('maas-dns')
   end
+
+  it 'should run the superuser setup' do
+    expect(chef_run).to run_execute('Setup Superuser')
+  end
+
+  describe 'superuser set to false' do
+    let(:chef_run) do
+      node.set['maas']['create_superuser'] = false
+      runner.converge(described_recipe)
+    end
+
+    it 'should not setup the superuser' do
+      expect(chef_run).to_not run_execute('Setup Superuser')
+    end
+  end
 end
