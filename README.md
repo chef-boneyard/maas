@@ -1,15 +1,24 @@
 # maas
 [![Build Status](https://travis-ci.org/chef-partners/maas.svg?branch=master)](https://travis-ci.org/chef-partners/maas)
 
-This is a cookbook to deploy [maas](https://maas.ubuntu.com) via chef.
 
-It requires the [`apt`](https://supermarket.chef.io/cookbooks/apt) cookbook.
 
-Ubuntu 14.04 is the only supported distro and version.
+## Scope
+This cookbook installs and configures the main [MAAS application](http://maas.ubuntu.com) and a Cluster Controller via one of the two recipes.
+
+The `default.rb` will install the default installation of MAAS. While the `clustercontroller` will only build you a [cluster controller](https://maas.ubuntu.com/docs/install.html#adding-cluster-controllers).
 
 After it has converged successfully, you should follow the steps [installing maas](https://maas.ubuntu.com/docs/install.html).
 
-The `default.rb` will install the default installation of MAAS. While the `clustercontroller` will only build you a [cluster controller](https://maas.ubuntu.com/docs/install.html#adding-cluster-controllers).
+## Requirements
+
+Ubuntu 14.04 is the only supported distro and version.
+
+It requires the [`apt`](https://supermarket.chef.io/cookbooks/apt) cookbook.
+
+## Usage
+
+Change the following attributes around via your preferred methods, and select one of the two recipes and run chef.
 
 ## Attributes
 
