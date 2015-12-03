@@ -1,15 +1,19 @@
 # maas
-[![Build Status](https://travis-ci.org/jjasghar/maas.svg?branch=master)](https://travis-ci.org/jjasghar/maas)
+[![Build Status](https://travis-ci.org/chef-partners/maas.svg?branch=master)](https://travis-ci.org/chef-partners/maas)
 
 This is a cookbook to deploy [maas](https://maas.ubuntu.com) via chef.
 
-It requires the `apt` cookbook.
+It requires the [`apt`](https://supermarket.chef.io/cookbooks/apt) cookbook.
 
 Ubuntu 14.04 is the only supported distro and version.
 
 After it has converged successfully, you should follow the steps [installing maas](https://maas.ubuntu.com/docs/install.html).
 
+The `default.rb` will install the default installation of MAAS. While the `clustercontroller` will only build you a [cluster controller](https://maas.ubuntu.com/docs/install.html#adding-cluster-controllers).
+
 ## Attributes
+
+You will want to changes these attributes around, these are the defaults.
 
 Create the Superuser
 ```ruby
@@ -31,7 +35,15 @@ Superuser email
 default['maas']['superuser_email'] = "fakeemail@fake.com"
 ```
 
+The secret for your cluster controller, whatever is on your region controller.
+```ruby
+default['maas']['cluster_secret'] = 'f0a6035342ed1651f822d26fe1ed0109'
+```
 
+Your region controller, just ip or hostname
+```ruby
+default['maas']['cluster_region_controller'] = '127.0.0.1'
+```
 
 ## Adding another nic after provisioning
 
