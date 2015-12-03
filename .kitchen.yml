@@ -2,8 +2,8 @@
 driver:
   name: vagrant
   network:
-  - ["forwarded_port", {guest: 80, host: 8080}]
-  - ["forwarded_port", {guest: 443, host: 8443}]
+  - ["forwarded_port", {guest: 80, host: 8080, auto_correct: true}]
+  - ["forwarded_port", {guest: 443, host: 8443, auto_correct: true}]
   - ["private_network", {ip: "10.0.0.1"}]
 
 provisioner:
@@ -16,4 +16,8 @@ suites:
   - name: default
     run_list:
       - recipe[maas::default]
+    attributes:
+  - name: clustercontroller
+    run_list:
+      - recipe[maas::clustercontroller]
     attributes:

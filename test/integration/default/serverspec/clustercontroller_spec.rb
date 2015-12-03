@@ -24,6 +24,10 @@ describe service('maas-proxy') do
   it { should be_enabled }
 end
 
-describe file('/etc/maas/.superuser_created') do
+describe file('/var/lib/maas/secret') do
+  it { should be_file }
+end
+
+describe file('/etc/maas/.maas_provision') do
   it { should be_file }
 end
