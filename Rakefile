@@ -47,7 +47,7 @@ namespace :integration do
 
     if run_kitchen
       Kitchen.logger = Kitchen.default_file_logger
-      @loader = Kitchen::Loader::YAML.new(:project_config => './.kitchen.cloud.yml') # rubocop:disable LineLength
+      @loader = Kitchen::Loader::YAML.new(:project_config => './.kitchen.cloud.yml')
       config = Kitchen::Config.new(:loader => @loader)
       config.instances.each do |instance|
         instance.test(:always)
