@@ -3,7 +3,7 @@ driver:
   name: azurerm
 
 driver_config:
-  subscription_id: '294daf5a-51db-45ec-b96a-71f01cd6df54'
+  subscription_id: ''
   location: 'East US'
   machine_size: 'Standard_D1'
 
