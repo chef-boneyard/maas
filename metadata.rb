@@ -4,7 +4,7 @@ maintainer_email 'partnereng@chef.io'
 license 'Apache 2'
 description 'Installs/Configures maas'
 long_description 'Installs/Configures maas'
-version '2.0.1'
+version '2.0.2'
 
 supports 'ubuntu', '>= 14.04'
 
