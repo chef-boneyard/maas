@@ -8,6 +8,6 @@ gem 'kitchen-vagrant'
 gem 'rubocop'
 
 group :development do
-  gem "kitchen-azurerm"
-  gem "github_changelog_generator"
+  gem 'kitchen-azurerm'
+  gem 'github_changelog_generator'
 end
