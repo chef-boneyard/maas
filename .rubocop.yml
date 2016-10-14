@@ -21,3 +21,6 @@ Style/FileName:
   
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
