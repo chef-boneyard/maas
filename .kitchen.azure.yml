@@ -1,0 +1,27 @@
+---
+driver:
+  name: azurerm
+
+driver_config:
+  subscription_id: ''
+  location: 'East US'
+  machine_size: 'Standard_D1'
+
+transport:
+  ssh_key: ~/.ssh/id_kitchen-azurerm
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[maas::default]
+    attributes:
+  - name: clustercontroller
+    run_list:
+      - recipe[maas::clustercontroller]
+    attributes:

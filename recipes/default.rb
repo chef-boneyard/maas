@@ -20,10 +20,9 @@ end
   end
 end
 
-if node['maas']['create_superuser']
-  execute 'Setup Superuser' do
-    command "maas-region-admin createadmin --username=#{node['maas']['superuser_name']} --password=#{node['maas']['superuser_password']} --email #{node['maas']['superuser_email']} && touch /etc/maas/.superuser_created" # rubocop:disable LineLength
-    creates '/etc/maas/.superuser_created'
-    action :run
-  end
+execute 'Setup Superuser' do
+  command "maas-region-admin createadmin --username=#{node['maas']['superuser_name']} --password=#{node['maas']['superuser_password']} --email #{node['maas']['superuser_email']} && touch /etc/maas/.superuser_created" # rubocop:disable LineLength
+  creates '/etc/maas/.superuser_created'
+  action :run
+  only_if { node['maas']['create_superuser'] == true }
 end
